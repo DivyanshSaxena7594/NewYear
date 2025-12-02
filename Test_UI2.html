@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy New Year Gavvu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+  textarea {
+    width: 80%;
+    padding: 14px 18px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(255, 105, 135, 0.25);
+    color: #7a003d;
+    transition: 0.3s ease;
+  }
+
+  textarea:focus {
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 6px 18px rgba(255, 105, 135, 0.35);
+    transform: scale(1.02);
+  }
+
+  textarea::placeholder {
+    color: #b30059;
+    opacity: 0.6;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ffb6c1, #ffdde1);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .container {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(255, 105, 135, 0.3);
+    padding: 40px;
+    max-width: 480px;
+    width: 90%;
+    text-align: center;
+  }
+
+  h1 {
+    font-family: 'Parisienne', cursive;
+    font-size: 3rem;
+    color: #b30059;
+    margin-bottom: 10px;
+  }
+
+  p.subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #7a003d;
+  }
+
+  .question {
+    margin: 20px 0;
+    text-align: left;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #7a003d;
+    font-weight: 600;
+  }
+
+  input[type="text"],
+  input[type="radio"] {
+    margin-bottom: 10px;
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    gap: 8px;
+  }
+
+  button {
+    background: #ff4d79;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+    font-weight: 600;
+  }
+
+  button:hover {
+    background: #e6004c;
+    transform: scale(1.05);
+  }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1 id="h1">💕 Quiz 💕</h1>
+  <p id="p1" class="subtitle">✨ A sweet little quiz for my munia gudia bccha ✨</p>
+
+  <form id="loveForm">
+    <label> Don’t think… just let your soul whisper the truth.</label>
+
+    <div class="question">
+      <label>1. how much we love each other? ❤️</label>
+      <div class="option"><input type="radio" name="q1" value="10kg">10kg</div>
+      <div class="option"><input type="radio" name="q1" value="50kg">50kg</div>
+      <div class="option"><input type="radio" name="q1" value="1.53 × 10^53 kg">1.53 × 10^53 kg</div>
+      <div class="option"><input type="radio" name="q1" value="1kg">1kg</div>
+    </div>
+
+    <div class="question">
+      <label>2. Can you guess what your smile means to me? ❤️</label>
+      <div class="option"><input type="radio" name="q2" value="It brightens my entire day!">It brightens my entire day!</div>
+      <div class="option"><input type="radio" name="q2" value="It means more than words can express">It means more than words can express</div>
+      <div class="option"><input type="radio" name="q2" value="It instantly lifts my heart">It instantly lifts my heart</div>
+      <div class="option"><input type="radio" name="q2" value="Your smile gives me a strength I can’t explain">Your smile gives me a strength I can’t explain</div>
+    </div>
+
+    <div class="question">
+      <label>3. How powerful is your hug? ❤️</label>
+      <div class="option"><input type="radio" name="q3" value="Forget the whole world">Powerful enough to make me forget the whole world.</div>
+      <div class="option"><input type="radio" name="q3" value="Calm every storm">Strong enough to calm every storm inside me.</div>
+      <div class="option"><input type="radio" name="q3" value="Feel like home">Warm enough to make me feel like I’m exactly where I belong.</div>
+    </div>
+
+    <div class="question">
+      <label>4. hum dono me jyada natkhat kon hai? ❤️</label>
+      <div class="option"><input type="radio" name="q4" value="tum">tum</div>
+      <div class="option"><input type="radio" name="q4" value="mai">mai</div>
+    </div>
+
+    <div class="question">
+      <label>5. What's our secret ingredient? ❤️</label>
+      <textarea id="secret" placeholder="Write here..."></textarea>
+    </div>
+
+    <div class="question">
+      <label>6. What's your New Year wish for our relationship? ❤️</label>
+      <textarea id="newyear" placeholder="Write here..."></textarea>
+    </div>
+
+    <button type="submit">Submit My Answers 💌</button>
+  </form>
+
+  <div id="loveMessage" style="display:none; margin-top:25px; font-size:1.3rem; color:#b30059; font-weight:600; font-family:'Parisienne', cursive;">
+    "Love is not about how many days, months, or years we’ve been together… it’s about how much we love each other every single day." 💕<br>
+    "Happy New Year, Munne bcche!! I want to spend an eternity with you 💕"<br><br>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1o8YPl0hyGbpRcHplXNvsm?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  </div>
+
+</div>
+
+<script>
+const form = document.getElementById("loveForm");
+const message = document.getElementById("loveMessage");
+const head = document.getElementById("h1");
+const para = document.getElementById("p1");
+
+// your Google Script URL here
+const SCRIPT_URL = "YOUR_SCRIPT_URL_HERE";
+
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const data = {
+    q1: form.q1.value,
+    q2: form.q2.value,
+    q3: form.q3.value,
+    q4: form.q4.value,
+    secret: document.getElementById("secret").value,
+    newyear: document.getElementById("newyear").value
+  };
+
+  // send to Google Sheets
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+
+  // hide and show romantic message
+  head.style.display = "none";
+  para.style.display = "none";
+  form.style.display = "none";
+  message.style.display = "block";
+});
+</script>
+
+</body>
+</html>
