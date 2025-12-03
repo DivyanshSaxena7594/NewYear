@@ -175,6 +175,11 @@
 </div>
 
 <script>
+    // hide and show romantic message
+  head.style.display = "none";
+  para.style.display = "none";
+  form.style.display = "none";
+  message.style.display = "block";
 const form = document.getElementById("loveForm");
 const head = document.getElementById("h1");
 const para = document.getElementById("p1");
@@ -191,12 +196,6 @@ document.getElementById("loveForm").addEventListener("submit", function (e) {
         newyear: document.querySelectorAll("textarea")[1].value
     };
 
-  // hide and show romantic message
-  head.style.display = "none";
-  para.style.display = "none";
-  form.style.display = "none";
-  message.style.display = "block";
-
     fetch("https://script.google.com/macros/s/AKfycbwNCZFOFejDt8TtuMQm5ZWqDjnkUIV1Di1B6zekZ6bxMAG8Rc8LoTblxRg7lIk20laQxA/exec", {
         method: "POST",
         mode: "no-cors",
@@ -211,6 +210,7 @@ document.getElementById("loveForm").addEventListener("submit", function (e) {
 
 </body>
 </html>
+
 
 
 
