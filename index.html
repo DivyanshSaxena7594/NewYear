@@ -193,7 +193,7 @@ loveForm.addEventListener("submit", function (e) {
     };
 
     fetch("https://script.google.com/macros/s/AKfycbwNCZFOFejDt8TtuMQm5ZWqDjnkUIV1Di1B6zekZ6bxMAG8Rc8LoTblxRg7lIk20laQxA/exec", {
-        method: "POST",
+        method: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
     });
@@ -207,6 +207,7 @@ loveForm.addEventListener("submit", function (e) {
 
 </body>
 </html>
+
 
 
 
