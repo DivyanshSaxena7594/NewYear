@@ -175,11 +175,7 @@
 </div>
 
 <script>
-    // hide and show romantic message
-  head.style.display = "none";
-  para.style.display = "none";
-  form.style.display = "none";
-  message.style.display = "block";
+
 const form = document.getElementById("loveForm");
 const head = document.getElementById("h1");
 const para = document.getElementById("p1");
@@ -187,6 +183,10 @@ const message = document.getElementById("loveMessage");
 document.getElementById("loveForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
+  head.style.display = "none";
+  para.style.display = "none";
+  form.style.display = "none";
+  message.style.display = "block";
     const data = {
         q1: document.querySelector('input[name="q1"]:checked')?.value || "",
         q2: document.querySelector('input[name="q2"]:checked')?.value || "",
@@ -210,6 +210,7 @@ document.getElementById("loveForm").addEventListener("submit", function (e) {
 
 </body>
 </html>
+
 
 
 
