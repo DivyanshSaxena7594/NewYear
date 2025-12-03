@@ -192,24 +192,22 @@ loveForm.addEventListener("submit", function (e) {
         newyear: document.getElementById("newyear").value
     };
 
-    // Immediately hide UI
-    head.style.display = "none";
-    para.style.display = "none";
-    loveForm.style.display = "none";
-    message.style.display = "block";
-
-    // Submit to Google Sheets
     fetch("https://script.google.com/macros/s/AKfycbwNCZFOFejDt8TtuMQm5ZWqDjnkUIV1Di1B6zekZ6bxMAG8Rc8LoTblxRg7lIk20laQxA/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
     });
+    head.style.display = "none";
+    para.style.display = "none";
+    loveForm.style.display = "none";
+    message.style.display = "block";
 });
 </script>
 
 
 </body>
 </html>
+
 
 
 
