@@ -116,8 +116,17 @@
 </head>
 
 <body>
+<div id="screen1" class="container">
+    <img src="https://media.tenor.com/gxRI3X6AIWgAAAAM/new-year-happy-new-year.gif" width="100%">
+    <button onclick="showScreen('screen2')">Next 💕</button>
+</div>
 
-<div class="container">
+<div id="screen2" class="container" style="display:none;">
+    <img src="https://happynewyeargif.com/mensaje/mimagen/romantic-couples-2026-gif.gif" width="100%">
+    <button onclick="showScreen('screen3')">Start Quiz 💗</button>
+</div>
+
+<div id="screen3" style="display:none;" class="container">
   <h1 id="h1">💕 Quiz 💕</h1>
   <p id="p1" class="subtitle">✨ A sweet little quiz for my munia gudia bccha ✨</p>
 
@@ -166,57 +175,60 @@
     <button type="submit">Submit My Answers 💌</button>
   </form>
 
-  <div id="loveMessage" style="display:none; margin-top:25px; font-size:1.3rem; color:#b30059; font-weight:600; font-family:'Parisienne', cursive;">
+</div>
+<div id="screen4" class="container" style="display:none;">
+    <img src="https://i.pinimg.com/originals/71/43/05/714305bab62625a16fd2a17340ad06f3.gif" width="100%">
+    <button onclick="showScreen('loveMessage')">Continue ❤️</button>
+</div>
+
+  <div id="loveMessage" class="container" style="display:none; margin-top:25px; font-size:1.3rem; color:#b30059; font-weight:600; font-family:'Parisienne', cursive;">
     "Love is not about how many days, months, or years we’ve been together… it’s about how much we love each other every single day." 💕<br>
     "Happy New Year, Munne bcche!! I want to spend an eternity with you 💕"<br><br>
     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1o8YPl0hyGbpRcHplXNvsm?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
   </div>
 
-</div>
-
 <script>
-const loveForm = document.getElementById("loveForm");
+function showScreen(id) {
+    document.querySelectorAll(".container").forEach(s => s.style.display = "none");
+    document.getElementById(id).style.display = "block";
+}
+const form = document.getElementById("loveForm");
+const message = document.getElementById("loveMessage");
 const head = document.getElementById("h1");
 const para = document.getElementById("p1");
-const message = document.getElementById("loveMessage");
 
-loveForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+// your Google Script URL here
+const SCRIPT_URL = "YOUR_SCRIPT_URL_HERE";
 
-    const data = {
-        q1: document.querySelector('input[name="q1"]:checked')?.value || "",
-        q2: document.querySelector('input[name="q2"]:checked')?.value || "",
-        q3: document.querySelector('input[name="q3"]:checked')?.value || "",
-        q4: document.querySelector('input[name="q4"]:checked')?.value || "",
-        secret: document.getElementById("secret").value,
-        newyear: document.getElementById("newyear").value
-    };
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
 
-    fetch("https://script.google.com/macros/s/AKfycbwNCZFOFejDt8TtuMQm5ZWqDjnkUIV1Di1B6zekZ6bxMAG8Rc8LoTblxRg7lIk20laQxA/exec", {
+  const data = {
+    q1: form.q1.value,
+    q2: form.q2.value,
+    q3: form.q3.value,
+    q4: form.q4.value,
+    secret: document.getElementById("secret").value,
+    newyear: document.getElementById("newyear").value
+  };
+
+  // send to Google Sheets
+fetch("https://script.google.com/macros/s/AKfycbwNCZFOFejDt8TtuMQm5ZWqDjnkUIV1Di1B6zekZ6bxMAG8Rc8LoTblxRg7lIk20laQxA/exec", {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
     });
-    head.style.display = "none";
-    para.style.display = "none";
-    loveForm.style.display = "none";
-    message.style.display = "block";
+
+
+  // hide and show romantic message
+  head.style.display = "none";
+  para.style.display = "none";
+  form.style.display = "none";
+  //message.style.display = "block";
+  showScreen('screen4');
 });
 </script>
 
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
